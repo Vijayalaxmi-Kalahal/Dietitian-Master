@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment</title>
+</head>
+<body>
+    <h1>Schedule a Consultation</h1>
+    <form method="POST" action="{{ url_for('schedule') }}">
+        <label for="date_time">Date and Time:</label>
+        <input type="datetime-local" id="date_time" name="date_time" required>
+        <br>
+        <label for="type">Consultation Type:</label>
+        <select id="type" name="type" required>
+            <option value="video">Video</option>
+            <option value="chat">Chat</option>
+        </select>
+        <br>
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes"></textarea>
+        <br>
+        <button type="submit">Schedule</button>
+    </form>
+    <a href="{{ url_for('view_appointments') }}">View Appointments</a>
+</body>
+</html>
